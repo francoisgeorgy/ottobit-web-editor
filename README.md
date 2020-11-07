@@ -401,7 +401,7 @@ Known issues
 ============
 
 - Need to update this README.
-- Missing Ottobit color scheme/theme.
+- Ottobit color scheme/theme needs more tweaking.
 - Global config needs the Ottobit settings.
 - Factory setting 03 seems to differ in the sysex from the PDF preset manual.
 - Verify/update the human-readable CC values in cc.js.

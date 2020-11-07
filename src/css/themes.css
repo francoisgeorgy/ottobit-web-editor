@@ -1,4 +1,5 @@
 html {
+    color: #fff;
 
     --body-bg-color: #111111;
 
@@ -16,37 +17,37 @@ html {
     --body-bg-from: #202023;
     --body-bg-to: #3E3E46;
 
-    --title-text: #000;
-    --header-text: #000;
+    --title-text: #fff;
+    --header-text: #fff;
     --header-shortcut-text: #666;
 
-    --menu-icon: #333;
-    --menu-text: #333;
-    --menu-text-hover: #000;
+    --menu-icon: #ccc;
+    --menu-text: #ccc;
+    --menu-text-hover: #fff;
 
-    --menu-link: #761ec6;
+    --menu-link: #a0a0a0;
 
     --preset-icon: #61410c;
 
-    --bt-color: #333;
-    --bt-border: #333;
-    --bt-hover-color: #000;
-    --bt-hover-bg-color: #eaea02;
-    --bt-on-color: #000;
-    --bt-on-bg-color: yellow;
-    --bt-on-border: #f9d000;
+    --bt-color: #ccc;
+    --bt-border: #ccc;
+    --bt-hover-color: #fff;
+    --bt-hover-bg-color: rgb(255, 128, 128);
+    --bt-on-color: #fff;
+    --bt-on-bg-color: red;
+    --bt-on-border: #f97000;
 
     --sw-color: #706c58;
-    --sw-on-color: yellow;
+    --sw-on-color: #fff;
     --sw-on-shadow-color: #1d1d01;
 
-    --inset-shadow-color: #000000;
+    --inset-shadow-color: #fff;
 
-    --select-color: #f9d000;
-    --select-bg: #373738;
-    --select-border: #000;
+    --select-color: #fff;
+    --select-bg: #c3c3c3;
+    --select-border: #fff;
 
-    --on-color: #000;
+    --on-color: #fff;
     --midi-on: yellow;
     --paused: #706c58;
     --running: red;
@@ -69,9 +70,8 @@ a {
 }
 
 #main-grid {
-    /*background-color: lightgoldenrodyellow;*/
-    background-color: #fdb53e;
-    background-image: url("../img/bg-logo-opacity5.png"), linear-gradient(to right, #ffa, #fdb53e 1%, #fdb53e 99%, #ffa);
+    background-color: #000;
+    background-image: url("../img/bg-logo-opacity5.png"), linear-gradient(to right, #bbb, #000 1%, #000 99%, #bbb);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -91,7 +91,7 @@ a {
 /*noinspection CssUnusedSymbol*/
 .knob-bg {
     fill: url("#grad2");
-    stroke: #000;
+    stroke: #fff;
 }
 
 /*noinspection CssUnusedSymbol*/

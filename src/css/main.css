@@ -123,7 +123,7 @@ a {
     /*left: 30px;*/
     left: 0;
     width: 160px;
-    background-color: lightgoldenrodyellow;
+    background-color: darkgray;
     opacity: 90%;
     padding: 8px;
     border-radius: 4px;
@@ -167,10 +167,6 @@ a {
 
 .span-6 {
     grid-column: span 6;
-}
-
-.panel-title span {
-    /*font-weight: bold;*/
 }
 
 .padding-0 {
