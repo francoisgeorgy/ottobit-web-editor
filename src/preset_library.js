@@ -25,7 +25,7 @@ import {device_name} from "./model/constants";
 
 /* editor presets (library) */
 
-const LOCAL_STORAGE_KEY = "studiocode.enzo-editor-15.library";
+const LOCAL_STORAGE_KEY = "studiocode.ottobit-editor-15.library";
 
 let read_presets_dialog = null;
 let edit_preset_dialog = null;

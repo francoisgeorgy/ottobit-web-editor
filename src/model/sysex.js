@@ -247,45 +247,45 @@ export function getPreset(complete = true) {
         data[i++] = 0x10;
     }
 
-    data[i++] = 0;    // We set device ID to 0 in order to get a sysex dump that can be sent to any Enzo.
+    data[i++] = 0;    // We set device ID to 0 in order to get a sysex dump that can be sent to any Ottobit Jr..
     data[i++] = meta.group_id.value;
     data[i++] = meta.model_id.value;
 
-    data[i++] = 0x26; // Enzo always sent this value when sending a sysex.
+    data[i++] = 0x26; // Enzo always sent this value when sending a sysex. (TODO!! - check this is the same command value Ottobit uses)
 
     data[i++] = meta.preset_id.value;                               // 8
 
-    data[i++] = control[control_id.pitch].raw_value;                // 9
+    data[i++] = control[control_id.sample_rate].raw_value;                // 9
     data[i++] = control[control_id.filter].raw_value;
-    data[i++] = control[control_id.mix].raw_value;
-    data[i++] = control[control_id.sustain].raw_value;
-    data[i++] = control[control_id.filter_envelope].raw_value;
-    data[i++] = control[control_id.modulation].raw_value;
-    data[i++] = control[control_id.portamento].raw_value;
-    data[i++] = control[control_id.filter_type].raw_value;
-    data[i++] = control[control_id.delay_level].raw_value;
-    data[i++] = control[control_id.ring_modulation].raw_value;
-    data[i++] = control[control_id.filter_bandwidth].raw_value;
-    data[i++] = control[control_id.delay_feedback].raw_value;
+    data[i++] = control[control_id.bits].raw_value;
+    data[i++] = control[control_id.stutter].raw_value;
+    data[i++] = control[control_id.sequencer].raw_value;
+    data[i++] = control[control_id.sequencer_mult].raw_value;
+    data[i++] = control[control_id.step1].raw_value;
+    data[i++] = control[control_id.step2].raw_value;
+    data[i++] = control[control_id.step3].raw_value;
+    data[i++] = control[control_id.step4].raw_value;
+    data[i++] = control[control_id.step5].raw_value;
+    data[i++] = control[control_id.step6].raw_value;
     data[i++] = control[control_id.bypass].raw_value;
-    data[i++] = control[control_id.envelope_type].raw_value;
-    data[i++] = control[control_id.synth_mode].raw_value;
-    data[i++] = control[control_id.synth_waveshape].raw_value;
+    data[i++] = 0; // TODO!! stutter hold? control[control_id.stutter_hold].raw_value;
+    data[i++] = control[control_id.sequencer_type].raw_value;
+    data[i++] = 0; // TODO!! unknown? control[control_id.??].raw_value;
     data[i++] = control[control_id.tempo].raw_value;
 
     // values 2 (EXP)
-    data[i++] = control[control_id.pitch].raw_value2;               // 26
+    data[i++] = control[control_id.sample_rate].raw_value2;               // 26
     data[i++] = control[control_id.filter].raw_value2;
-    data[i++] = control[control_id.mix].raw_value2;
-    data[i++] = control[control_id.sustain].raw_value2;
-    data[i++] = control[control_id.filter_envelope].raw_value2;
-    data[i++] = control[control_id.modulation].raw_value2;
-    data[i++] = control[control_id.portamento].raw_value2;
-    data[i++] = control[control_id.filter_type].raw_value2;
-    data[i++] = control[control_id.delay_level].raw_value2;
-    data[i++] = control[control_id.ring_modulation].raw_value2;
-    data[i++] = control[control_id.filter_bandwidth].raw_value2;
-    data[i++] = control[control_id.delay_feedback].raw_value2;      // 37
+    data[i++] = control[control_id.bits].raw_value2;
+    data[i++] = control[control_id.stutter].raw_value2;
+    data[i++] = control[control_id.sequencer].raw_value2;
+    data[i++] = control[control_id.sequencer_mult].raw_value2;
+    data[i++] = control[control_id.step1].raw_value2;
+    data[i++] = control[control_id.step2].raw_value2;
+    data[i++] = control[control_id.step3].raw_value2;
+    data[i++] = control[control_id.step4].raw_value2;
+    data[i++] = control[control_id.step5].raw_value2;
+    data[i++] = control[control_id.step6].raw_value2;      // 37
 
     if (complete) data[i] = SYSEX_END_BYTE;                         // 38
 
@@ -310,7 +310,7 @@ export function getSysexDataForGlobalConfig(global_num, value) {
 
     data[0] = 0x00;
     data[1] = GROUP_ID.pedal;
-    data[2] = MODEL_ID.enzo;
+    data[2] = MODEL_ID.ottobitjr;
     data[3] = 0x2A;
     data[4] = global_num;
     data[5] = value;

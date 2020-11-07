@@ -1,13 +1,13 @@
-Enzo editor
+Ottobit Jr. editor
 ===========
 
-Control your Meris Enzo pedal with your web browser. View all the pedal's settings at once.
+Control your Meris Ottobit Jr. pedal with your web browser. View all the pedal's settings at once.
 
-![Enzo Editor screenshot](/images/doc/enzo-editor-v15.jpg "Enzo Editor screenshot")
+![Ottobit Jr. Editor screenshot](/images/doc/enzo-editor-v15.jpg "Ottobit Jr. Editor screenshot")
 
-[Open the editor](https://studiocode.dev/enzo-editor/)
+[Open the editor](https://studiocode.dev/ottobit-editor/) (TODO!!)
 
-[Youtube demo](https://www.youtube.com/watch?v=lWIpPJFARDQ)
+[Youtube demo](https://www.youtube.com/watch?v=lWIpPJFARDQ) (TODO!!)
 
 
 
@@ -21,42 +21,33 @@ only **Chrome** and **Opera** support this standard.
     - [Disaster Area](https://www.disasterareaamps.com/) MIDI-Baby
 
 
-### Changes from the previous version (1.0):
-
-- The preset in the URL is not supported anymore. 
-- The "history" window (messages) has been discarded*.
-- The Controls' description are not displayed anymore*.
-
-(*) this may come back in a future version.
-
-The version 1.0 is still available at [studiocode.dev/enzo-editor-v10/](/enzo-editor-v10/).
 
 Setup
 =====
 
-1. Configure the Enzo for MIDI communication. Consult the Enzo user manual for the exact procedure.
-    1. Set the Enzo's EXP/MIDI jack for MIDI communication.
-    2. Set the Enzo's MIDI mode to MIDI OUT. 
+1. Configure the Ottobit Jr. for MIDI communication. Consult the Ottobit Jr. user manual for the exact procedure.
+    1. Set the Ottobit Jr.'s EXP/MIDI jack for MIDI communication.
+    2. Set the Ottobit Jr.'s MIDI mode to MIDI OUT. 
     3. Choose a MIDI channel and set it.
-2. Connect the Enzo with the MIDI interface. Be sure to use a stereo (TRS) jack cable.
+2. Connect the Ottobit Jr. with the MIDI interface. Be sure to use a stereo (TRS) jack cable.
 3. Connect the MIDI interface to your computer.
-4. Open [studiocode.dev/enzo-editor](https://studiocode.dev/enzo-editor/)
+4. Open [studiocode.dev/ottobit-editor](https://studiocode.dev/ottobit-editor/)
 5. Authorize the browser to access your MIDI devices.
 6. In the editor, select the MIDI input, output and channel. 
     - You can ignore the "in 2" input for the moment.
-7. Move a knob on your Enzo, the corresponding control in the editor must react accordingly.
-8. Play some sound through the Enzo and move a knob in the editor. The sound should change as if you have moved the same control on the Enzo. 
-9. Enjoy your Enzo!
+7. Move a knob on your Ottobit Jr., the corresponding control in the editor must react accordingly.
+8. Play some sound through the Ottobit Jr. and move a knob in the editor. The sound should change as if you have moved the same control on the Ottobit Jr.. 
+9. Enjoy your Ottobit Jr.!
 
 
-![doc-enzo-anim-6.gif](/images/doc/doc-enzo-anim-6.gif)
+![doc-ottobit-anim-6.gif](/images/doc/doc-enzo-anim-6.gif) (TODO!!)
  
 
 ### MIDI input no 2
 
 The second MIDI input can be used, for example, to connect an expression pedal or a MIDI controller.
 
-The editor will automatically forward to the Enzo the messages it receives on this second MIDI input. It will however ignore the messages that Enzo does not support.
+The editor will automatically forward to the Ottobit Jr. the messages it receives on this second MIDI input. It will however ignore the messages that Ottobit Jr. does not support.
 
 You can also use this second input to check the configuration of an external MIDI controler even without a pedal connected to the editor. 
 The received messages will update the editor's controls and thus you'll be able to check that the messages sent by your external controller are valid.
@@ -71,7 +62,7 @@ The configuration of the editor is automatically saved in the browser's _local s
 
 If you can switch presets from the editor but nothing happens when you move a control, that means the input and output devices are correct but that the MIDI channel is incorrect.
 
-Consult the **Troubleshooting** chapter at the end of this page if you still have problems making your Enzo and the editor work together.
+Consult the **Troubleshooting** chapter at the end of this page if you still have problems making your Ottobit Jr. and the editor work together.
 
 The page [resources/meris-pedals-checklist](/resources/meris-pedals-checklist/) could also help you.
 
@@ -86,16 +77,16 @@ MIDI communication
 
 The "**in**" and "**out**" texts light up when a MIDI message is send or received.
 
-If the Editor is able to communicate with Enzo, the preset selector will have a light background. 
-In case the Editor is not able to communicate with Enzo, the preset selector will have a dark background. 
+If the Editor is able to communicate with Ottobit Jr., the preset selector will have a light background. 
+In case the Editor is not able to communicate with Ottobit Jr., the preset selector will have a dark background. 
 
-**Communication with Enzo OK:** 
+**Communication with Ottobit Jr. OK:** 
 
-![](/images/doc/doc-enzo-preset-comm-ok.png)
+![](/images/doc/doc-enzo-preset-comm-ok.png) (TODO!!)
 
-**No communication with Enzo:**
+**No communication with Ottobit Jr.:**
 
-![](/images/doc/doc-enzo-preset-comm-ko.png)
+![](/images/doc/doc-enzo-preset-comm-ko.png) (TODO!!)
 
 
 Tooltips:
@@ -105,7 +96,7 @@ Tooltips (little informational text box) can be displayed for most of the User I
 
 Click the <i class="far fa-comment-alt"></i> icon to enable/disable the tooltips:
 
-![doc-enzo-anim-11.gif](/images/doc/doc-enzo-anim-11.gif)
+![doc-ottobit-anim-11.gif](/images/doc/doc-enzo-anim-11.gif) (TODO!!)
 
 
 Global settings:
@@ -115,11 +106,11 @@ The Global Settings are locked by default. This is to prevent any unwanted chang
 
 Click the lock icon (<i class="fas fa-lock-open" aria-hidden="true"></i> or <i class="fas fa-lock icon-btn" aria-hidden="true"></i>) to enable/disable the Global Settings editing.
 
-![doc-enzo-anim-9.gif](/images/doc/doc-enzo-anim-9.gif)
+![doc-ottobit-anim-9.gif](/images/doc/doc-enzo-anim-9.gif) (TODO!!)
 
 ### Important if you have more than one Meris pedal: 
 
-If you have more than one Meris pedal connected to the same_ MIDI interface, it is recommended you do not change the Global Settings while more than one pedal is connected and powered-up. 
+If you have more than one Meris pedal connected to the _same_ MIDI interface, it is recommended you do not change the Global Settings while more than one pedal is connected and powered-up. 
 
 The Global Settings MIDI messages do not distinguish between different pedals and all the pedals connected to the same MIDI interface will receive and apply the Global Settings messages.
 
@@ -138,7 +129,7 @@ The RANDOMIZE command sets all the controls to a random value.
 
 The INIT and RANDOMIZE commands affect both the normal and the EXP values. 
 
-![doc-enzo-anim-10.gif](/images/doc/doc-enzo-anim-10.gif)
+![doc-ottobit-anim-10.gif](/images/doc/doc-enzo-anim-10.gif) (TODO!!)
 
 
 Tempo unit:
@@ -146,7 +137,7 @@ Tempo unit:
 
 You can toggle the TEMPO unit between milliseconds and BPM by clicking on the TEMPO label.
 
-![doc-enzo-anim-tempo.gif](/images/doc/doc-enzo-anim-tempo.gif)
+![doc-ottobit-anim-tempo.gif](/images/doc/doc-enzo-anim-tempo.gif) (TODO!!)
 
 
 Add current settings to the Library:
@@ -157,7 +148,7 @@ If you leave the name empty, the preset will automatically be named with the cur
 
 You can rearange the Library Presets by drag & dropping them.
 
-![doc-enzo-anim-7.gif](/images/doc/doc-enzo-anim-7.gif)
+![doc-ottobit-anim-7.gif](/images/doc/doc-enzo-anim-7.gif) (TODO!!)
 
 
 Library scrolling:
@@ -167,7 +158,7 @@ The <i class="fas fa-arrows-alt-v"></i> icon enable/disable the vertical scrolli
 
 When the Library is open, the first 16 presets are always visible.
 
-![doc-enzo-anim-3.gif](/images/doc/doc-enzo-anim-3.gif)
+![doc-ottobit-anim-3.gif](/images/doc/doc-enzo-anim-3.gif) (TODO!!)
 
 
 Preset modified:
@@ -175,11 +166,11 @@ Preset modified:
 
 As soon as you change a control, the current preset selector display a dot to remind you that the current settings do not reflect the saved preset anymore.
 
-![doc-enzo-anim-12.gif](/images/doc/doc-enzo-anim-12.gif)
+![doc-ottobit-anim-12.gif](/images/doc/doc-enzo-anim-12.gif) (TODO!!)
 
 If you had selected a preset from the Library and you have modified a control, the Library Preset will show a save icon. Click this save icon to update the Library Preset.
 
-![](/images/doc/doc-enzo-preset-update-icon.png)
+![](/images/doc/doc-enzo-preset-update-icon.png) (TODO!!)
 
 
 How to set EXP values:
@@ -189,22 +180,22 @@ To define the values corresponding to the TOE DOWN position of the EXP pedal, cl
 
 Keyboard shortcut: pressing the SHIFT key on your keyboard is the same as clicking the "toe" button.
 
-![doc-enzo-anim-5.gif](/images/doc/doc-enzo-set-exp.gif)
+![doc-ottobit-anim-5.gif](/images/doc/doc-enzo-set-exp.gif) (TODO!!)
  
 
 Presets Library
 ==============
 
-The Presets Library is a simple tool to manage more than the 16 Enzo presets.
+The Presets Library is a simple tool to manage more than the 16 Ottobit Jr. presets.
 
 It is important to keep in mind that the Library stores the presets in the browser's _local storage_. It is therefore a good idea to export
 them as SysEx files if you want to share them across browsers or if you don't want to lose them in case you clear all your browsing data.
 
 A future version of the Editor will save the Library Presets in the cloud and offer better management features. 
 
-### Import Enzo presets:
+### Import Ottobit Jr. presets:
 
-This will read the 16 presets stored in Enzo memory and save them in the Presets Library. 
+This will read the 16 presets stored in Ottobit Jr. memory and save them in the Presets Library. 
 
 ### Import sysex files:
 
@@ -212,9 +203,9 @@ You can import presets stored in files (sysex files, usually with .syx extension
 
 If you import several files at once, the order you select the files is the order they will appear in the Library. You can sort them in the Library by drag-and-dropping them.
 
-### Write presets in Enzo:
+### Write presets in Ottobit Jr.:
 
-You can write up to 16 presets in Enzo. A popup window will allow you to choose the range of presets you want to write in Enzo. 
+You can write up to 16 presets in Ottobit Jr.. A popup window will allow you to choose the range of presets you want to write in Ottobit Jr.. 
 
 If you want to save them in a specific order, you have to first sort the presets in the Library (with drag & drop).
 
@@ -227,21 +218,21 @@ At the moment, you cannot export only one single preset, or a selection of prese
 Loading a preset from the Library
 ---------------------------------
 
-When you select a preset in the Library, it is sent to the Enzo and replace the current _live_ values of the controls. It does not replace the preset _stored in memory_. 
-If you want to _keep_ the preset in Enzo, you have to save it in Enzo memory. This is described in the next chapter.
+When you select a preset in the Library, it is sent to the Ottobit Jr. and replace the current _live_ values of the controls. It does not replace the preset _stored in memory_. 
+If you want to _keep_ the preset in Ottobit Jr., you have to save it in Ottobit Jr. memory. This is described in the next chapter.
 
-Save a single Library Preset to Enzo
+Save a single Library Preset to Ottobit Jr.
 ------------------------------------
 
 1. Select the preset in the Library.
 2. Click the SAVE command in the Editor header.
 
-Instead of clicking the SAVE button you can also press and hold the ALT button on the Enzo.
+Instead of clicking the SAVE button you can also press and hold the ALT button on the Ottobit Jr..
           
 Library preset icons
 -------------------
 
-![](/images/doc/doc-enzo-preset-icons.png)
+![](/images/doc/doc-enzo-preset-icons.png) (TODO!!)
 
 Click the <i class="fas fa-pen"></i> Pen icon to edit the name or the description only.  
 
@@ -257,7 +248,7 @@ Click the <i class="fas fa-save"></i> Save icon to update the preset. You can al
 Expression pedal
 ================
 
-The EXP slider allows you to simulate an expression pedal connected to the Enzo.
+The EXP slider allows you to simulate an expression pedal connected to the Ottobit Jr..
 
 * The slider's **toe up** position (slider at 0) corresponds to a opened (toe up) expression pedal.
 * The slider's **down** position (slider at 127) corresponds to a closed (toe down) expression pedal.
@@ -281,16 +272,16 @@ While the Editor is in EXP mode, the control's name are displayed in _italic_.
 
 When you are done, click the "toe" button again, or press your computer TAB key, to get back to the normal values.
 
-![todo](/images/enzo/exp_edit_mode1.jpg)
+![todo](/images/enzo/exp_edit_mode1.jpg)  (TODO!!)
 
 ### Check your EXP config:
 
 Move the "EXP" slider to morph the controls between the normal and EXP values.
 
-Note: the editor will interpolate the values to show you what the Enzo is probably doing. 
-The editor does a linear interpolation and maybe Enzo does a different kind of interpolation, so the interpolated value may displayed by the Editor be different from the real value Enzo will use.  
+Note: the editor will interpolate the values to show you what the Ottobit Jr. is probably doing. 
+The editor does a linear interpolation and maybe Ottobit Jr. does a different kind of interpolation, so the interpolated value may displayed by the Editor be different from the real value Ottobit Jr. will use.  
 
-Please read the [Meris Enzo User Manual](https://www.meris.us/wp-content/uploads/2018/06/Meris_Enzo_full_Manual_v3.pdf), section 5, for more information.
+Please read the [Meris Ottobit Jr. User Manual](https://www.meris.us/wp-content/uploads/2017/03/Meris_OttobitJr_full_Manual_v5.pdf), section 6, for more information.
   
   
 Keyboard shortcuts
@@ -360,40 +351,40 @@ The Editor uses the browser's Local Storage to store the preferences and the Pre
 
 To clear all the Editor's data, start the editor with the `deletedata=1` parameter in the URL. 
 
-Example: [https://studiocode.dev/enzo-editor/?deletedata=1](/enzo-editor/?deletedata=1)
+Example: [https://studiocode.dev/ottobit-editor/?deletedata=1](/ottobit-editor/?deletedata=1)
 
 
 Troubleshooting
 ===============
 
-Enzo and the Editor are not in sync
+Ottobit Jr. and the Editor are not in sync
 -----------------------------------
 
-If you think the Editor is out of sync with Enzo anymore:
+If you think the Editor is out of sync with Ottobit Jr. anymore:
 
 - Select a preset in the Editor.
 - If the above step did not solve the problem, refresh the page in your browser (F5 or Ctrl-R in Window, Cmd-R in OSX).
 - If the editor is still out of sync, check the MIDI configuration. See the next chapter.
 
 
-MIDI on the Enzo
+MIDI on the Ottobit Jr.
 ----------------
 
-If you can't get the MIDI communication working, check the following on the Enzo:
+If you can't get the MIDI communication working, check the following on the Ottobit Jr.:
 
 - The Global Settings EXP MODE is set to MIDI
 - The Global Settings MIDI is set to MIDI OUT
 - Choose a Global Settings MIDI CHANNEL.  
-- The cable between the Enzo and the MIDI interface is TRS (stereo).
+- The cable between the Ottobit Jr. and the MIDI interface is TRS (stereo).
 - The MIDI interface is powered on.
-- The Enzo is powered on.
-- The TSR cable is connected between the 4 MIDI interface jack and the Enzo's EXP/MIDI jack.
+- The Ottobit Jr. is powered on.
+- The TSR cable is connected between the 4 MIDI interface jack and the Ottobit Jr.'s EXP/MIDI jack.
 - The MIDI interface is connected to your PC.
-- The MIDI editor uses the same channel as the Enzo's MIDI channel defined in the Global Settings.
+- The MIDI editor uses the same channel as the Ottobit Jr.'s MIDI channel defined in the Global Settings.
 
-Check the [Meris Enzo User Manual](https://www.meris.us/wp-content/uploads/2018/06/Meris_Enzo_full_Manual_v3.pdf) and 
+Check the [Meris Ottobit Jr. User Manual](https://www.meris.us/wp-content/uploads/2017/03/Meris_OttobitJr_full_Manual_v5.pdf) and 
 the [Meris MIDI I/O User Manual](https://www.meris.us/wp-content/uploads/2018/03/Meris_MIDI_IO_Full_Manual_v1b.pdf)
-for more informations and instructions about how to set the Enzo's Global Settings.
+for more informations and instructions about how to set the Ottobit Jr.'s Global Settings.
  
  
 Limitations of this editor
@@ -409,11 +400,17 @@ This editor has mainly been tested with Chrome under OSX 10.14. Some tests have 
 Known issues
 ============
 
-- Filter Type does not follow EXP.
-- The TEMPO value is not accurate when set from the TAP switch.
-- It is not possible to capture the press & hold of the TAP footswitch because the Enzo only sends a message for when 
-the footswitch is pressed, but not for when it is released.
-- Selecting a preset with EXP set to max in the editor does not reset EXP when the new setting is loaded.
+- Need to update this README.
+- Missing Ottobit color scheme/theme.
+- Global config needs the Ottobit settings.
+- Factory setting 03 seems to differ in the sysex from the PDF preset manual.
+- Verify/update the human-readable CC values in cc.js.
+- Change stutter hold control to off/on button?
+- From Enzo - Filter Type does not follow EXP.
+- From Enzo - The TEMPO value is not accurate when set from the TAP switch.
+- From Enzo - It is not possible to capture the press & hold of the TAP footswitch because the Enzo only sends a message for when 
+the footswitch is pressed, but not for when it is released? (Verify this for the Ottobit Jr.)
+- From Enzo - Selecting a preset with EXP set to max in the editor does not reset EXP when the new setting is loaded? (Verify still an issue)
 
 
 Thanks
@@ -437,7 +434,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public 
 
 You can view and get a copy the license at https://www.gnu.org/licenses/licenses.en.html#GPL.
 
-This editor is an Open Source project. You are welcome to contribute. The code is available at https://github.com/francoisgeorgy/enzo-web-editor.
+This editor is an Open Source project. You are welcome to contribute. The code is available at https://github.com/francoisgeorgy/ottobit-web-editor.
 
 To contribute your bug fixes, new features, etc.:
  

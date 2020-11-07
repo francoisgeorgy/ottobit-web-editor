@@ -1,25 +1,23 @@
-
 export const control_id = {
-    exp_pedal: 4,
-    envelope_type: 9,       // ALT / 2nd layer
-    bypass: 14,
-    tempo: 15,
-    pitch: 16,
-    filter: 17,
-    mix: 18,
-    sustain: 19,
-    filter_envelope: 20,
-    modulation: 21,
-    portamento: 22,         // ALT / 2nd layer
-    filter_type: 23,        // ALT / 2nd layer
-    delay_level: 24,        // ALT / 2nd layer
-    ring_modulation: 25,    // ALT / 2nd layer
-    filter_bandwidth: 26,   // ALT / 2nd layer
-    delay_feedback: 27,     // ALT / 2nd layer
-    tap: 28,
-    synth_mode: 29,
-    synth_waveshape: 30
-};
+        exp_pedal: 4,
+        bypass: 14,
+        tempo: 15,
+        sample_rate: 16,
+        filter: 17,
+        bits: 18,
+        stutter: 19,
+        sequencer: 20,
+        sequencer_mult: 21,
+        step1: 22,             // ALT / 2nd layer
+        step2: 23,             // ALT / 2nd layer
+        step3: 24,             // ALT / 2nd layer
+        step4: 25,             // ALT / 2nd layer
+        step5: 26,             // ALT / 2nd layer
+        step6: 27,             // ALT / 2nd layer
+        tap: 28,
+        sequencer_type: 29,
+        stutter_hold: 31
+    };
 
 export const control = new Array(127);
 
@@ -45,6 +43,16 @@ const _2_steps = function (v) {
     return v < 64 ? 0 : 127;
 };
 
+const _3_steps = function (v) {
+    if (v < 63) {
+        return 0;
+    } else if (v === 63) {
+        return 63;
+    } else {
+        return 127;
+    }
+};
+
 const _4_steps = function (v) {
     if (v < 32) {
         return 0;
@@ -57,90 +65,115 @@ const _4_steps = function (v) {
     }
 };
 
-const _pitch = function (v) {
-    if (v === 0) {
-        return "-2 oct";
-    } else if (v < 12) {
-        return "-1 oct";
-    } else if (v < 56) {
-        return Math.floor((v - 56) / 4);
-    } else if (v >= 56 && v < 72) {
-        return "0";
-    } else if (v < 116) {
-        return Math.floor((v - 68) / 4);
-    } else if (v < 127) {
-        return "+1 oct";
-    } else {
-        return "+2 oct";
-    }
+const _sample_rate = function (v) {
+    // if (v === 0) {
+    //     return "-2 oct";
+    // } else if (v < 12) {
+    //     return "-1 oct";
+    // } else if (v < 56) {
+    //     return Math.floor((v - 56) / 4);
+    // } else if (v >= 56 && v < 72) {
+    //     return "0";
+    // } else if (v < 116) {
+    //     return Math.floor((v - 68) / 4);
+    // } else if (v < 127) {
+    //     return "+1 oct";
+    // } else {
+    //     return "+2 oct";
+    // }
+
+    // TODO!!
+    return v;
 };
 
-const _filter_type = function (v) {
+
+const _sequencer = function (v) {
+    // TODO!! verify
     if (v < 4) {
-        return "ladder LP";
+        return "OFF";
     } else if (v < 33) {
-        return "ladder BP";
+        return "1X";
     } else if (v < 60) {
-        return "ladder HP";
+        return "2X";
     } else if (v < 88) {
-        return "state var. LP";
+        return "4X";
     } else if (v < 116) {
-        return "state var. BP";
+        return "8X";
     } else {
-        return "state var. HP";
+        return "INF";
     }
 };
 
-const _filter_type_values = function (v) {
-    if (v < 4) {
-        return 0;
+const _step = function (v) {
+        // TODO!!
+        return v;
+};
+
+const _stutter = function (v) {
+    // TODO!!
+    return v;
+
+    // 1. Stutter Off
+    // 2. Full Speed, Stutter Once
+    // 3. Full Speed, Stutter Twice
+    // 4. Full Speed, Stutter Three Times
+    // 5. Full Speed, Stutter Four Times
+    // 6. Full Speed, Stutter Six Times
+    // 7. Full Speed, Stutter Eight Times
+    // 8. Full Speed, Stutter Sixteen Times
+    // 9. Double Speed, Stutter Once
+    // 10. Double Speed, Stutter Twice
+    // 11. Double Speed, Stutter Three Times
+    // 12. Double Speed, Stutter Four Times
+    // 13. Double Speed, Stutter Six Times
+    // 14. Double Speed, Stutter Eight Times
+    // 15. Double Speed, Stutter Sixteen Times
+    // 16. Half Speed, Stutter Once
+    // 17. Half Speed, Stutter Twice
+    // 18. Half Speed, Stutter Three Times
+    // 19. Half Speed, Stutter Four Times
+    // 20. Half Speed, Stutter Six Times
+    // 21. Half Speed, Stutter Eight Times
+    // 22. Half Speed, Stutter Sixteen Times
+    // 23. Random (combination of all of the above, plus the reverse of all the above)
+};
+
+const _sequencer_mult = function (v) {
+    // TODO!! verify - this is off a bit
+    if (v < 17) {
+        return "1X";
     } else if (v < 33) {
-        return 32;
-    } else if (v < 60) {
-        return 59;
-    } else if (v < 88) {
-        return 87;
-    } else if (v < 116) {
-        return 115;
+        return "2X";
+    } else if (v < 49) {
+        return "4X";
+    } else if (v < 65) {
+        return "8X";
+    } else if (v < 81) {
+        return "16X";
+    } else if (v < 97) {
+        return "32X";
+    } else if (v < 113) {
+        return "64X";
     } else {
-        return 127;
+        return "128X";
     }
 };
 
-const _filter_env = function (v) {
-    if (v===0) return "OFF";
+const _sequencer_type = function (v) {
+    if (v < 63) {
+        return "Pitch";
+    } else if (v === 63) {
+        return "Sample Rate";
+    } else {
+        return "Filter";
+    }
+};
+
+const _stutter_hold = function (v) {
     if (v < 64) {
-        return `D ${63-v}`;
+        return "off";
     } else {
-        return `A ${v-64}`;
-    }
-};
-
-const _env_type = function (v) {
-    if (v < 64) {
-        return "triggered";
-    } else {
-        return "follower";
-    }
-};
-
-const _synth_mode = function (v) {
-    if (v < 32) {
-        return "dry";
-    } else if (v < 64) {
-        return "mono";
-    } else if (v < 96) {
-        return "arp";
-    } else {
-        return "poly";
-    }
-};
-
-const _waveshape = function (v) {
-    if (v < 64) {
-        return "sawtooth";
-    } else {
-        return "square";
+        return "on";
     }
 };
 
@@ -154,21 +187,13 @@ export const _tempo_bpm = function (v) {
     return `${bpm}`;
 };
 
+// TODO!! Check/change below Sysex's
+
 function defineControls() {
     control[control_id.exp_pedal] = { // 4,
         name: "Exp pedal",
         human: _0_100,
         infos: "The expression pedal works by morphing between two complete settings of all of the knob values (even the second layer knob values)."
-    };
-    control[control_id.envelope_type] = { // 9,
-        name: "Envelope type",
-        human: _env_type,
-        map_raw: _2_steps,
-        sysex: {
-            offset: 22,
-            mask: [0x7F]
-        },
-        infos: "Changes the Filter Envelope from Triggered Envelope to Envelope Follower."
     };
     control[control_id.bypass] = { // 14,
         name: "Bypass",
@@ -190,11 +215,11 @@ function defineControls() {
         },
         infos: "Sets the time for the delay line and arpeggiated Synth."
     };
-    control[control_id.pitch] = { // 16,
-        name: "Pitch",
+    control[control_id.sample_rate] = { // 16,
+        name: "Sample Rate",
         init_value: 63,
         cc_center: [63, 64],
-        human: _pitch,
+        human: _sample_rate,
         sysex: {
             offset: 9,
             mask: [0x7F]
@@ -203,7 +228,7 @@ function defineControls() {
             offset: 26,
             mask: [0x7F]
         },
-        infos: "Changes the pitch of the Synth or Dry signal in half step increments."
+        infos: "Changes the sample rate from 48 Hz to 48 kHz."
     };
     control[control_id.filter] = { // 17,
         name: "Filter",
@@ -217,10 +242,10 @@ function defineControls() {
             offset: 27,
             mask: [0x7F]
         },
-        infos: "Changes the cutoff frequency of the filter."
+        infos: "Changes the cutoff frequency of the Meris original ladder style low pass filter from 96Hz to 24kHz."
     };
-    control[control_id.mix] = { // 18,
-        name: "Mix",
+    control[control_id.bits] = { // 18,
+        name: "Bits",
         init_value: 127,
         human: _percent,
         sysex: {
@@ -231,11 +256,11 @@ function defineControls() {
             offset: 28,
             mask: [0x7F]
         },
-        infos: "Adjusts the balance between Dry and Wet signals."
+        infos: "Changes the bit depth from 1 bit to 24 bits."
     };
-    control[control_id.sustain] = { // 19,
-        name: "Sustain",
-        human: _percent,
+    control[control_id.stutter] = { // 19,
+        name: "Stutter",
+        human: _stutter,
         sysex: {
             offset: 12,
             mask: [0x7F]
@@ -244,11 +269,11 @@ function defineControls() {
             offset: 29,
             mask: [0x7F]
         },
-        infos: "Increases the sustain of Synth notes (Compresses the input in Dry Mode)."
+        infos: "Changes the play speed and length of the stutter."
     };
-    control[control_id.filter_envelope] = { // 20,
-        name: "Filter envelope",
-        human: _filter_env,
+    control[control_id.sequencer] = { // 20,
+        name: "Sequencer",
+        human: _sequencer,
         sysex: {
             offset: 13,
             mask: [0x7F]
@@ -257,11 +282,11 @@ function defineControls() {
             offset: 30,
             mask: [0x7F]
         },
-        infos: "Sets attack and decay rates for the Triggered Envelope; sets the direction and sensitivity for the Envelope Follower."
+        infos: "Sets Sequencer to Play Once, Play Twice, Play 4 Times, Play 8 Times, or Play Continuously."
     };
-    control[control_id.modulation] = { // 21,
-        name: "Modulation",
-        human: _off_when_zero_percent,
+    control[control_id.sequencer_mult] = { // 21,
+        name: "Sequencer Mult",
+        human: _sequencer_mult,
         sysex: {
             offset: 14,
             mask: [0x7F]
@@ -270,11 +295,13 @@ function defineControls() {
             offset: 31,
             mask: [0x7F]
         },
-        infos: "Detunes the oscillators of each Synth voice<br/>(Sets <span style='font-size: small'>the amount</span> of delay modulation in Dry mode)."
+        infos: "Sets the sequencer speed as a multiple of the tap tempo."
     };
-    control[control_id.portamento] = { // 22,
-        name: "Portamento",
-        human: _percent,
+
+    control[control_id.step1] = { // 22,
+        name: "Step 1",
+        init_value: 63,
+        human: _step,
         sysex: {
             offset: 15,
             mask: [0x7F]
@@ -283,12 +310,12 @@ function defineControls() {
             offset: 32,
             mask: [0x7F]
         },
-        infos: "Smoothly glide from one Synth note to another (Bends the pitch using the filter envelope as a modifier in Dry Mode)."
+        infos: "Step 1 of the sequencer."
     };
-    control[control_id.filter_type] = { // 23,
-        name: "Filter type",
-        human: _filter_type,
-        map_raw: _filter_type_values,
+    control[control_id.step2] = { // 23,
+        name: "Step 2",
+        init_value: 63,
+        human: _step,
         sysex: {
             offset: 16,
             mask: [0x7F]
@@ -297,11 +324,12 @@ function defineControls() {
             offset: 33,
             mask: [0x7F]
         },
-        infos: "Select between 6 filter types (from Min to Max) : 1. Ladder Lowpass 2. Ladder Shelving Bandpass 3. Ladder Highpass 4. State Variable Lowpass 5. State Variable Bandpass 6. State Variable Highpass."
+        infos: "Step 2 of the sequencer."
     };
-    control[control_id.delay_level] = { // 24,
-        name: "Delay level",
-        human: _percent,
+    control[control_id.step3] = { // 24,
+        name: "Step 3",
+        init_value: 63,
+        human: _step,
         sysex: {
             offset: 17,
             mask: [0x7F]
@@ -310,11 +338,12 @@ function defineControls() {
             offset: 34,
             mask: [0x7F]
         },
-        infos: "Sets the level of a single delay tap from Min to Mid. After the Midpoint, this control blends in a second stereo tap."
+        infos: "Step 3 of the sequencer."
     };
-    control[control_id.ring_modulation] = { //  25,
-        name: "Ring modulation",
-        human: _percent,
+    control[control_id.step4] = { // 25,
+        name: "Step 4",
+        init_value: 63,
+        human: _step,
         sysex: {
             offset: 18,
             mask: [0x7F]
@@ -323,11 +352,12 @@ function defineControls() {
             offset: 35,
             mask: [0x7F]
         },
-        infos: "Changes the frequency of a classic ring modulator. The filter envelope as a modifier."
+        infos: "Step 4 of the sequencer."
     };
-    control[control_id.filter_bandwidth] = { // 26,
-        name: "Filter Resonance",
-        human: _percent,
+    control[control_id.step5] = { // 26,
+        name: "Step 5",
+        init_value: 63,
+        human: _step,
         sysex: {
             offset: 19,
             mask: [0x7F]
@@ -336,11 +366,12 @@ function defineControls() {
             offset: 36,
             mask: [0x7F]
         },
-        infos: "Changes the filter from a wide bandwidth for gentle filtering to a narrow bandwidth for peaky filtering."
+        infos: "Step 5 of the sequencer."
     };
-    control[control_id.delay_feedback] = { // 27,
-        name: "Delay feedback",
-        human: _percent,
+    control[control_id.step6] = { // 27,
+        name: "Step 6",
+        init_value: 63,
+        human: _step,
         sysex: {
             offset: 20,
             mask: [0x7F]
@@ -349,41 +380,42 @@ function defineControls() {
             offset: 37,
             mask: [0x7F]
         },
-        infos: "Sets the repeats for the delay line."
+        infos: "Step 6 of the sequencer."
     };
+
     control[control_id.tap] = { // 28,
         name: "Tap",
         // no_init: true,
         init_value: 0,
         no_randomize: true,
         map_raw: () => 127,
-        infos: "Sets the time for the delay line and arpeggiated Synth."
+        infos: "Sets the speed and the timing of the Sequencer and the Stutter."
         // sysex: {
         //     offset: 22,
         //     mask: [0x7F]
         // }
     };
-    control[control_id.synth_mode] = { // 29,
-        name: "Synth mode",
-        init_value: 63,
-        human: _synth_mode,
-        map_raw: _4_steps,
+    control[control_id.sequencer_type] = { // 29,
+        name: "Sequencer Type",
+        init_value: 0,
+        human: _sequencer_type,
+        map_raw: _3_steps,
         sysex: {
             offset: 23,
             mask: [0x7F]
         },
-        infos: "Poly: Multi-Voice Synthesizer with polyphonic chord tracking Mono: Single Voice Dual Osc Synth w/monophonic tracking Arp: Turns your chords into se-  quenced patterns linked to the tap tempo Dry: Disables the Synth. Allows the filter, delay and pitch shift to be applied to the input signal."
+        infos: "Pitch: choice of every semitone between and octave below and above the guitar’s pitch\nSample Rate: Modify sample rate\nFilter: Modify filter"
     };
-    control[control_id.synth_waveshape] = { // 30
-        name: "Waveshape",
+    control[control_id.stutter_hold] = { // 31
+        name: "Stutter Hold",
         init_value: 0,
-        human: _waveshape,
+        human: _stutter_hold,
         map_raw: _2_steps,
         sysex: {
             offset: 24,
             mask: [0x7F]
         },
-        infos: "Changes the Synth waveshape from Sawtooth to Square."
+        infos: "Freeze audio on/off."
     };
 
     // add the missing default properties

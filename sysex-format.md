@@ -1,4 +1,4 @@
-# Enzo sysex format
+# Ottobit Jr. sysex format
 
 ## Summary
 
@@ -36,32 +36,34 @@ Note: "Japanese Group" manufacturers have only one ID byte. See [https://www.mid
 |      6 |     1 | `7F`       | `01111111         ` |    7 | Model # (0=Ottobit Jr, 1=Mercury7, 2=Polymoon, 3=Enzo) |
 |      7 |     1 | `7F`       | `01111111         ` |    7 | Command |
 |      8 |     1 | `7F`       | `01111111         ` |    7 | Preset number |
-|      9 |     1 | `7F`       | `01111111`          |    7 | Pitch (CC 16) |
+|      9 |     1 | `7F`       | `01111111`          |    7 | Sample Rate (CC 16) |
 |     10 |     1 | `7F`       | `01111111`          |    7 | Filter (CC 17) |
-|     11 |     1 | `7F`       | `01111111`          |    7 | Mix (CC 18) |
-|     12 |     1 | `7F`       | `01111111`          |    7 | Sustain (CC 19) |
-|     13 |     1 | `7F`       | `01111111`          |    7 | Filter envelope (CC 20) |
-|     14 |     1 | `7F`       | `01111111`          |    7 | Modulation (CC 21) |
-|     15 |     1 | `7F`       | `01111111`          |    7 | Portamento (CC 22) |
-|     16 |     1 | `7F`       | `01111111`          |    7 | Filter type (CC 23) |
-|     17 |     1 | `7F`       | `01111111`          |    7 | Delay level (CC 24) |
-|     18 |     1 | `7F`       | `01111111`          |    7 | Ring modulation (CC 25) |
-|     19 |     1 | `7F`       | `01111111`          |    7 | Filter bandwidth (CC 26) |
-|     20 |     1 | `7F`       | `01111111`          |    7 | Delay feedback (CC 27) |
+|     11 |     1 | `7F`       | `01111111`          |    7 | Bits (CC 18) |
+|     12 |     1 | `7F`       | `01111111`          |    7 | Stutter (CC 19) |
+|     13 |     1 | `7F`       | `01111111`          |    7 | Sequencer (CC 20) |
+|     14 |     1 | `7F`       | `01111111`          |    7 | Sequencer Mult (CC 21) |
+|     15 |     1 | `7F`       | `01111111`          |    7 | Step 1 (CC 22) |
+|     16 |     1 | `7F`       | `01111111`          |    7 | Step 2 (CC 23) |
+|     17 |     1 | `7F`       | `01111111`          |    7 | Step 3 (CC 24) |
+|     18 |     1 | `7F`       | `01111111`          |    7 | Step 4 (CC 25) |
+|     19 |     1 | `7F`       | `01111111`          |    7 | Step 5 (CC 26) |
+|     20 |     1 | `7F`       | `01111111`          |    7 | Step 6 (CC 27) |
 |     21 |     1 | `7F`       | `01111111`          |    7 | Bypass (CC 14) |
-|     22 |     1 | `7F`       | `01111111`          |    7 | Envelope type (CC 9) |
-|     23 |     1 | `7F`       | `01111111`          |    7 | Synth mode (CC 29) |
-|     24 |     1 | `7F`       | `01111111`          |    7 | Waveshape (CC 30) |
+|     22 |     1 | `7F`       | `01111111`          |    7 | ???? Stutter hold (CC 31) |
+
+|     23 |     1 | `7F`       | `01111111`          |    7 | Sequencer type (CC 29) |
+|     24 |     1 | `7F`       | `01111111`          |    7 | ???? (CC 30) |
+
 |     25 |     1 | `7F`       | `01111111`          |    7 | Tempo (CC 15) |
-|     26 |     1 | `7F`       | `01111111`          |    7 | Pitch (CC 16) - second value when using EXP |
+|     26 |     1 | `7F`       | `01111111`          |    7 | Sample Rate (CC 16) - second value when using EXP |
 |     27 |     1 | `7F`       | `01111111`          |    7 | Filter (CC 17) - second value when using EXP  |
-|     28 |     1 | `7F`       | `01111111`          |    7 | Mix (CC 18) - second value when using EXP  |
-|     29 |     1 | `7F`       | `01111111`          |    7 | Sustain (CC 19) - second value when using EXP  |
-|     30 |     1 | `7F`       | `01111111`          |    7 | Filter envelope (CC 20) - second value when using EXP  |
-|     31 |     1 | `7F`       | `01111111`          |    7 | Modulation (CC 21) - second value when using EXP  |
-|     32 |     1 | `7F`       | `01111111`          |    7 | Portamento (CC 22) - second value when using EXP  |
-|     33 |     1 | `7F`       | `01111111`          |    7 | Filter type (CC 23) - second value when using EXP  |
-|     34 |     1 | `7F`       | `01111111`          |    7 | Delay level (CC 24) - second value when using EXP  |
-|     35 |     1 | `7F`       | `01111111`          |    7 | Ring modulation (CC 25) - second value when using EXP  |
-|     36 |     1 | `7F`       | `01111111`          |    7 | Filter bandwidth (CC 26) - second value when using EXP  |
-|     37 |     1 | `7F`       | `01111111`          |    7 | Delay feedback (CC 27) - second value when using EXP  |
+|     28 |     1 | `7F`       | `01111111`          |    7 | Bits (CC 18) - second value when using EXP  |
+|     29 |     1 | `7F`       | `01111111`          |    7 | Stutter (CC 19) - second value when using EXP  |
+|     30 |     1 | `7F`       | `01111111`          |    7 | Sequencer (CC 20) - second value when using EXP  |
+|     31 |     1 | `7F`       | `01111111`          |    7 | Sequencer Mult (CC 21) - second value when using EXP  |
+|     32 |     1 | `7F`       | `01111111`          |    7 | Step 1 (CC 22) - second value when using EXP  |
+|     33 |     1 | `7F`       | `01111111`          |    7 | Step 2 (CC 23) - second value when using EXP  |
+|     34 |     1 | `7F`       | `01111111`          |    7 | Step 3 (CC 24) - second value when using EXP  |
+|     35 |     1 | `7F`       | `01111111`          |    7 | Step 4 (CC 25) - second value when using EXP  |
+|     36 |     1 | `7F`       | `01111111`          |    7 | Step 5 (CC 26) - second value when using EXP  |
+|     37 |     1 | `7F`       | `01111111`          |    7 | Step 6 (CC 27) - second value when using EXP  |

@@ -1,5 +1,5 @@
 
-export const device_name = "Enzo";
+export const device_name = "Ottobit Jr.";
 
 export const SYSEX_CMD = {
     preset_request: 0x25,
@@ -20,14 +20,13 @@ export const MODEL_ID = {
     enzo: 3
 };
 
-export const SYNTH_MODES = {
-    dry: 0,
-    mono: 63,
-    arp: 95,
-    poly: 127
+export const SEQUENCER_TYPE = {
+    pitch: 0,
+    sample_rate: 63,
+    filter: 127
 };
 
-export const WAVESHAPES = {
-    sawtooth: 0,
-    square: 127
+export const STUTTER_HOLD = {
+    off: 0,
+    on: 127
 };

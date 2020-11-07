@@ -184,7 +184,7 @@ const setPresetNumber = function(n) {
 };
 
 export default {
-    name: "Enzo",
+    name: "Ottobit Jr.",
     meta,
     control_id,
     control,
