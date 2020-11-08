@@ -406,11 +406,11 @@ Known issues
 - Factory setting 03 seems to differ in the sysex from the PDF preset manual.
 - Verify/update the human-readable CC values in cc.js.
 - Change stutter hold control to off/on button?
+- From Enzo - Selecting a preset with EXP set to max in the editor does not reset EXP when the new setting is loaded --- this is still an issue with this Ottobit UI
 - From Enzo - Filter Type does not follow EXP.
 - From Enzo - The TEMPO value is not accurate when set from the TAP switch.
 - From Enzo - It is not possible to capture the press & hold of the TAP footswitch because the Enzo only sends a message for when 
 the footswitch is pressed, but not for when it is released? (Verify this for the Ottobit Jr.)
-- From Enzo - Selecting a preset with EXP set to max in the editor does not reset EXP when the new setting is loaded? (Verify still an issue)
 
 
 Thanks

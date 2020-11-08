@@ -1,23 +1,23 @@
 export const control_id = {
-        exp_pedal: 4,
-        bypass: 14,
-        tempo: 15,
-        sample_rate: 16,
-        filter: 17,
-        bits: 18,
-        stutter: 19,
-        sequencer: 20,
-        sequencer_mult: 21,
-        step1: 22,             // ALT / 2nd layer
-        step2: 23,             // ALT / 2nd layer
-        step3: 24,             // ALT / 2nd layer
-        step4: 25,             // ALT / 2nd layer
-        step5: 26,             // ALT / 2nd layer
-        step6: 27,             // ALT / 2nd layer
-        tap: 28,
-        sequencer_type: 29,
-        stutter_hold: 31
-    };
+    exp_pedal: 4,
+    bypass: 14,
+    tempo: 15,
+    sample_rate: 16,
+    filter: 17,
+    bits: 18,
+    stutter: 19,
+    sequencer: 20,
+    sequencer_mult: 21,
+    step1: 22,             // ALT / 2nd layer
+    step2: 23,             // ALT / 2nd layer
+    step3: 24,             // ALT / 2nd layer
+    step4: 25,             // ALT / 2nd layer
+    step5: 26,             // ALT / 2nd layer
+    step6: 27,             // ALT / 2nd layer
+    tap: 28,
+    sequencer_type: 29,
+    stutter_hold: 31
+};
 
 export const control = new Array(127);
 
@@ -88,8 +88,7 @@ const _sample_rate = function (v) {
 
 
 const _sequencer = function (v) {
-    // TODO!! verify
-    if (v < 4) {
+    if (v === 0) {
         return "OFF";
     } else if (v < 33) {
         return "1X";
@@ -105,58 +104,177 @@ const _sequencer = function (v) {
 };
 
 const _step = function (v) {
-        // TODO!!
-        return v;
+    if (v === 0)
+        return "OFF";
+    if (v === 127)
+        return "MUTE";
+
+    if (control[control_id.sequencer_type].raw_value < 63) {
+        // PITCH:
+        if (v < 13)
+            return "-12";
+        if (v < 17)
+            return "-11";
+        if (v < 21)
+            return "-10";
+        if (v < 25)
+            return "-9";
+        if (v < 29)
+            return "-8";
+        if (v < 33)
+            return "-7";
+        if (v < 37)
+            return "-6";
+        if (v < 41)
+            return "-5";
+        if (v < 46)
+            return "-4";
+        if (v < 50)
+            return "-3";
+        if (v < 54)
+            return "-2";
+        if (v < 58)
+            return "-1";
+        if (v < 74)
+            return "-0";
+        if (v < 78)
+            return "+1";
+        if (v < 83)
+            return "+2";
+        if (v < 87)
+            return "+3";
+        if (v < 91)
+            return "+4";
+        if (v < 95)
+            return "+5";
+        if (v < 99)
+            return "+6";
+        if (v < 103)
+            return "+7";
+        if (v < 107)
+            return "+8";
+        if (v < 111)
+            return "+9";
+        if (v < 115)
+            return "+10";
+        if (v < 119)
+            return "+11";
+        return "+12";
+    }
+    else {
+        // FILTER/SAMPLE is %
+        return Math.floor(v / 125 * 100) + '%';
+    }
 };
 
 const _stutter = function (v) {
-    // TODO!!
-    return v;
-
     // 1. Stutter Off
+    if (v === 0)
+        return "OFF";
     // 2. Full Speed, Stutter Once
+    if (v < 12)
+        return "1:1X";
     // 3. Full Speed, Stutter Twice
+    if (v < 18)
+        return "1:2X";
     // 4. Full Speed, Stutter Three Times
+    if (v < 23)
+        return "1:3X";
     // 5. Full Speed, Stutter Four Times
+    if (v < 29)
+        return "1:4X";
     // 6. Full Speed, Stutter Six Times
+    if (v < 35)
+        return "1:6X";
     // 7. Full Speed, Stutter Eight Times
+    if (v < 41)
+        return "1:8X";
     // 8. Full Speed, Stutter Sixteen Times
+    if (v < 46)
+        return "1:16X";
     // 9. Double Speed, Stutter Once
+    if (v < 52)
+        return "2:1X";
     // 10. Double Speed, Stutter Twice
+    if (v < 58)
+        return "2:2X";
     // 11. Double Speed, Stutter Three Times
+    if (v < 64)
+        return "2:3X";
     // 12. Double Speed, Stutter Four Times
+    if (v < 69)
+        return "2:4X";
     // 13. Double Speed, Stutter Six Times
+    if (v < 75)
+        return "2:6X";
     // 14. Double Speed, Stutter Eight Times
+    if (v < 81)
+        return "2:8X";
     // 15. Double Speed, Stutter Sixteen Times
+    if (v < 87)
+        return "2:16X";
     // 16. Half Speed, Stutter Once
+    if (v < 92)
+        return ".5:1X";
     // 17. Half Speed, Stutter Twice
+    if (v < 98)
+        return ".5:2X";
     // 18. Half Speed, Stutter Three Times
+    if (v < 104)
+        return ".5:3X";
     // 19. Half Speed, Stutter Four Times
+    if (v < 110)
+        return ".5:4X";
     // 20. Half Speed, Stutter Six Times
+    if (v < 115)
+        return ".5:6X";
     // 21. Half Speed, Stutter Eight Times
+    if (v < 121)
+        return ".5:8X";
     // 22. Half Speed, Stutter Sixteen Times
+    if (v < 127)
+        return ".5:16X";
     // 23. Random (combination of all of the above, plus the reverse of all the above)
+    return "RND";
 };
 
 const _sequencer_mult = function (v) {
-    // TODO!! verify - this is off a bit
-    if (v < 17) {
+    if (v === 0)
         return "1X";
-    } else if (v < 33) {
+    if (v < 20)
         return "2X";
-    } else if (v < 49) {
+    if (v < 40)
         return "4X";
-    } else if (v < 65) {
+    if (v < 60)
         return "8X";
-    } else if (v < 81) {
+    if (v < 80)
         return "16X";
-    } else if (v < 97) {
+    if (v < 100)
         return "32X";
-    } else if (v < 113) {
+    // note that sending 120 seems to cause 128X even on pedal???
+    if (v < 125)
         return "64X";
-    } else {
-        return "128X";
-    }
+    return "128X";
+
+
+    // old
+    // if (v < 17) {
+    //     return "1X";
+    // } else if (v < 33) {
+    //     return "2X";
+    // } else if (v < 49) {
+    //     return "4X";
+    // } else if (v < 65) {
+    //     return "8X";
+    // } else if (v < 81) {
+    //     return "16X";
+    // } else if (v < 97) {
+    //     return "32X";
+    // } else if (v < 113) {
+    //     return "64X";
+    // } else {
+    //     return "128X";
+    // }
 };
 
 const _sequencer_type = function (v) {
