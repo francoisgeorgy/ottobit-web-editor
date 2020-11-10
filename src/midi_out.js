@@ -252,7 +252,7 @@ export function savePreset() {
     log("savePreset");
     // if (MODEL.getPresetNumber() < 1) {
     // }
-    if (!window.confirm(`Save current preset in Enzo memory slot #${MODEL.getPresetNumber()} ?`)) return;
+    if (!window.confirm(`Save current preset in Ottobit memory slot #${MODEL.getPresetNumber()} ?`)) return;
     sendSysexCommand(SYSEX_CMD.preset_write);
     setPresetSelectorClean();
 }

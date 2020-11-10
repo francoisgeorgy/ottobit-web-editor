@@ -1,11 +1,5 @@
-.config {
-
-}
 
 .config select {
-    /*color: var(--select-color);*/
-    /*background-color: var(--select-bg);*/
-    /*border-color: var(--select-border);*/
     border-radius: 3px;
     padding: 1px;
     font-size: 0.9em;
@@ -16,8 +10,8 @@
 }
 .config .panel-closed select {
     margin-left: 5px;
-    /*background-color: lightgoldenrodyellow;*/
-    background-color: #eeeea1;
+    background-color: #333;
+    color: #ccc;
 }
 
 .config .panel-closed select.device {

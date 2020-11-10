@@ -1,5 +1,5 @@
 html {
-    color: #fff;
+    color: #a0a0a0; /* default text color */
 
     --body-bg-color: #111111;
 
@@ -18,14 +18,16 @@ html {
     --body-bg-to: #3E3E46;
 
     --title-text: #fff;
-    --header-text: #fff;
+    --header-text: #a0a0a0;
     --header-shortcut-text: #666;
 
-    --menu-icon: #ccc;
-    --menu-text: #ccc;
+    --control-label: #ccc;
+
+    --menu-icon: #dddddd;
+    --menu-text: #dddddd;
     --menu-text-hover: #fff;
 
-    --menu-link: #a0a0a0;
+    --menu-link: #dddddd;
 
     --preset-icon: #61410c;
 
@@ -86,6 +88,14 @@ a {
 }
 .mg-row-border-bottom {
     border-bottom: 1px solid #bc9b65;
+}
+
+.controls-row .header {
+    color: var(--control-label);
+}
+
+.menu-entry a:hover {
+    color: var(--menu-text-hover);
 }
 
 /*noinspection CssUnusedSymbol*/

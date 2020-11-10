@@ -114,6 +114,9 @@
 
 .size-0 .menu .menu-entry {margin-left: 10px;}
 .size-1 .menu .menu-entry {margin-left: 5px;}
-.size-2 .menu .menu-entry {margin-left: 10px;}
+.size-2 .menu .menu-entry {
+    margin-left: 10px;
+    text-align: center;
+}
 
 .size-0 .menu .menu-text {display: none;}

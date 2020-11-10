@@ -251,7 +251,7 @@ export function getPreset(complete = true) {
     data[i++] = meta.group_id.value;
     data[i++] = meta.model_id.value;
 
-    data[i++] = 0x26; // Enzo always sent this value when sending a sysex. (TODO!! - check this is the same command value Ottobit uses)
+    data[i++] = 0x26; // the pedal always sent this value when sending a sysex. (TODO!! - check this is the same command value Ottobit uses)
 
     data[i++] = meta.preset_id.value;                               // 8
 
